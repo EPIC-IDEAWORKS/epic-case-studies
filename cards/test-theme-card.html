@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EPIC Theme Test Card</title>
+  <link rel="stylesheet" href="../assets/epic-theme.css">
+  <style>
+    .card {
+      border-left: 4px solid var(--epic-accent);
+      padding: 1.25rem 1.5rem;
+      max-width: 800px;
+      width: 100%;
+    }
+
+    .card__label {
+      font-family: var(--epic-font-display);
+      font-size: 0.75rem;
+      font-weight: bold;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--epic-accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .card__title {
+      font-family: var(--epic-font-display);
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: var(--epic-charcoal);
+      margin-bottom: 0.75rem;
+    }
+
+    .card__body {
+      font-family: var(--epic-font-body);
+      font-size: 0.95rem;
+      color: var(--epic-charcoal);
+      margin-bottom: 1rem;
+    }
+
+    .card__tag {
+      display: inline-block;
+      background: var(--epic-accent-soft);
+      color: var(--epic-white);
+      font-size: 0.75rem;
+      font-weight: bold;
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px;
+      margin-right: 0.4rem;
+    }
+
+    .card__accent-bar {
+      height: 3px;
+      background: var(--epic-orange);
+      width: 3rem;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="card__label">Low Carbon Readiness · AgriFood</div>
+    <h2 class="card__title">Theme Test Card — EPIC Case Studies</h2>
+    <p class="card__body">
+      This card validates that <code>epic-theme.css</code> loads correctly and that all four
+      CSS custom properties render as expected: accent colour (left border), soft accent
+      (tag background), display font (headings), and body font (this paragraph).
+      Background should be transparent when embedded in an iframe.
+    </p>
+    <span class="card__tag">DSI</span>
+    <span class="card__tag">LCRP</span>
+    <div class="card__accent-bar"></div>
+  </div>
+</body>
+</html>

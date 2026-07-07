@@ -1,0 +1,39 @@
+/* EPIC Case Studies — Shared Theme Tokens
+   Derived from: docs/mohawk-brand-style-guide.md (November 2023)
+   Update these values if the Mohawk brand palette changes. */
+
+:root {
+  /* Accent: Crimson is EPIC's primary action colour; Burgundy as the soft/muted variant */
+  --epic-accent:      #990033; /* Mohawk Crimson — PMS 201 */
+  --epic-accent-soft: #660033; /* Mohawk Burgundy — PMS 7421 */
+
+  /* Supporting palette */
+  --epic-orange:      #ff9933; /* Mohawk Orange — PMS 158 */
+  --epic-charcoal:    #333333; /* Mohawk Charcoal — body text, borders */
+  --epic-white:       #ffffff;
+
+  /* Typography: Verdana per brand guide; accessible sans-serif fallbacks */
+  --epic-font-display: Verdana, Geneva, sans-serif;
+  --epic-font-body:    Verdana, Geneva, sans-serif;
+}
+
+/* Base reset for all pages and embeddable cards */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background: transparent; /* allows host page colour to show through when embedded */
+  color: var(--epic-charcoal);
+  font-family: var(--epic-font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
