@@ -8,51 +8,109 @@
   <style>
     /* ── Site header ─────────────────────────────────────────── */
     .site-header {
-      background: var(--epic-charcoal);
-      padding: 1rem 2rem;
+      background: var(--epic-white);
+      border-bottom: 1px solid #e8e8e8;
+      padding: 0.85rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
     }
 
-    .site-header__brand {
-      color: var(--epic-white);
-      font-size: 1rem;
-      font-weight: bold;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
+    .site-header__logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
       text-decoration: none;
     }
 
-    .site-header__brand span {
+    .site-header__logo-top {
+      font-size: 1.1rem;
+      font-weight: bold;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--epic-charcoal);
+    }
+
+    .site-header__logo-bottom {
+      font-size: 0.85rem;
+      font-weight: bold;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
       color: var(--epic-orange);
+    }
+
+    .site-header__nav {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .site-header__nav a {
+      font-size: 0.88rem;
+      color: var(--epic-charcoal);
+      text-decoration: none;
+    }
+
+    .site-header__nav a:hover {
+      color: var(--epic-accent);
+    }
+
+    .site-header__nav .nav-cta {
+      background: var(--epic-orange);
+      color: var(--epic-white);
+      font-weight: bold;
+      padding: 0.45rem 1rem;
+      border-radius: 2px;
+    }
+
+    .site-header__nav .nav-cta:hover {
+      background: var(--epic-accent);
+      color: var(--epic-white);
     }
 
     /* ── Hero ────────────────────────────────────────────────── */
     .hero {
-      background: var(--epic-accent);
-      color: var(--epic-white);
+      /* Placeholder: replace background-color with background-image when photo available */
+      background-color: #1a1a1a;
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       padding: 3rem 2rem;
+      position: relative;
     }
 
-    .hero__eyebrow {
-      font-size: 0.75rem;
-      font-weight: bold;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.7);
-      margin-bottom: 0.5rem;
+    .hero__overlay {
+      background: rgba(153, 0, 51, 0.88); /* --epic-accent at 88% opacity */
+      padding: 2.5rem 3rem;
+      max-width: 680px;
+      width: 100%;
+      text-align: center;
     }
 
     .hero__title {
-      font-size: 2rem;
+      font-size: 2.2rem;
       font-weight: bold;
-      margin-bottom: 0.75rem;
+      color: var(--epic-white);
+      margin-bottom: 1rem;
       line-height: 1.2;
     }
 
     .hero__subtitle {
       font-size: 1rem;
-      color: rgba(255,255,255,0.85);
-      max-width: 640px;
-      line-height: 1.6;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.7;
+    }
+
+    .hero__placeholder-note {
+      position: absolute;
+      bottom: 0.5rem;
+      right: 0.75rem;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.3);
+      font-style: italic;
     }
 
     /* ── Page sections ───────────────────────────────────────── */
@@ -276,20 +334,28 @@
 
   <!-- Site header -->
   <header class="site-header">
-    <a class="site-header__brand" href="index.html">
-      Mohawk <span>EPIC</span>
+    <a class="site-header__logo" href="index.html">
+      <span class="site-header__logo-top">Mohawk</span>
+      <span class="site-header__logo-bottom">IDEAWORKS · EPIC</span>
     </a>
+    <nav class="site-header__nav">
+      <a href="#projects">Projects</a>
+      <a href="tools/index.html">Tools</a>
+      <a href="mailto:epic@mohawkcollege.ca" class="nav-cta">Get in Touch</a>
+    </nav>
   </header>
 
-  <!-- Hero -->
+  <!-- Hero: replace background-color with background-image once a photo is available -->
   <section class="hero">
-    <div class="hero__eyebrow">Mohawk College — Hamilton, Ontario</div>
-    <h1 class="hero__title">Energy &amp; Power Innovation Centre</h1>
-    <p class="hero__subtitle">
-      EPIC partners with industry to solve applied research challenges in digital systems,
-      power infrastructure, and low carbon readiness. This site is EPIC's technical
-      reference hub — structured evidence from every project, openly published.
-    </p>
+    <div class="hero__overlay">
+      <h1 class="hero__title">EPIC Case Studies</h1>
+      <p class="hero__subtitle">
+        Mohawk College's Energy &amp; Power Innovation Centre partners with industry
+        to solve applied research challenges in digital systems, power infrastructure,
+        and low carbon readiness. Explore our technical project evidence below.
+      </p>
+    </div>
+    <span class="hero__placeholder-note">Placeholder background — replace with hero image</span>
   </section>
 
   <!-- Program areas -->
@@ -324,7 +390,7 @@
   </div>
 
   <!-- Project index -->
-  <section class="section">
+  <section class="section" id="projects">
     <h2 class="section__heading">Projects</h2>
 
     <div class="filter-bar">
