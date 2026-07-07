@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Embed Test Harness</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+
+    .host--light { background: #f0f0f0; padding: 1.5rem; margin-bottom: 2rem; }
+    .host--dark  { background: #1a1a2e; padding: 1.5rem; margin-bottom: 2rem; }
+    .host--color { background: #660033; padding: 1.5rem; margin-bottom: 2rem; }
+
+    label { display: block; font-size: 0.8rem; margin-bottom: 0.5rem; }
+    .host--dark label, .host--color label { color: #fff; }
+
+    iframe {
+      width: 100%;
+      height: 220px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Embed Test Harness — Theme Validation</h1>
+  <p style="margin-bottom:2rem;">Each iframe below embeds <code>cards/test-theme-card.html</code>.
+  The card background should be transparent in all three host contexts.</p>
+
+  <div class="host--light">
+    <label>Host background: light grey (#f0f0f0)</label>
+    <iframe src="cards/test-theme-card.html" title="Test card on light background"></iframe>
+  </div>
+
+  <div class="host--dark">
+    <label>Host background: dark (#1a1a2e)</label>
+    <iframe src="cards/test-theme-card.html" title="Test card on dark background"></iframe>
+  </div>
+
+  <div class="host--color">
+    <label>Host background: Mohawk Burgundy (#660033)</label>
+    <iframe src="cards/test-theme-card.html" title="Test card on burgundy background"></iframe>
+  </div>
+</body>
+</html>

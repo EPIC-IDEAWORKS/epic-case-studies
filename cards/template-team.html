@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Project Title] — EPIC Research Team</title>
+  <link rel="stylesheet" href="../assets/epic-theme.css">
+  <style>
+    .card__table th {
+      width: 25%;
+    }
+
+    .card__table td:last-child {
+      font-size: 0.88rem;
+      color: #444;
+    }
+
+    /* On narrow screens, stack the columns */
+    @media (max-width: 500px) {
+      .card__table thead { display: none; }
+      .card__table tr    { display: block; padding: 0.5rem 0; }
+      .card__table td    { display: block; width: 100%; padding: 0.15rem 0.75rem; border: none; }
+      .card__table td:first-child { font-weight: bold; color: var(--epic-accent); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="card__label">EPIC Research Team</div>
+    <table class="card__table">
+      <thead>
+        <tr>
+          <th>Team Member</th>
+          <th>Role &amp; Contribution</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>[Name]</td>
+          <td>[Title / role on project. Specific contribution to this collaboration.]</td>
+        </tr>
+        <tr>
+          <td>[Name]</td>
+          <td>[Title / role on project. Specific contribution to this collaboration.]</td>
+        </tr>
+        <tr>
+          <td>[Name]</td>
+          <td>[Title / role on project. Specific contribution to this collaboration.]</td>
+        </tr>
+        <!-- Add or remove rows as needed -->
+      </tbody>
+    </table>
+    <div class="card__divider"></div>
+  </div>
+</body>
+</html>

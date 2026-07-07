@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Stack Test — All Templates</title>
+  <link rel="stylesheet" href="assets/epic-theme.css">
+  <style>
+    body {
+      background: #f5f5f5;
+      padding: 2rem 1rem;
+    }
+
+    .stack-label {
+      font-size: 0.7rem;
+      font-weight: bold;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #999;
+      margin: 2rem 0 0.35rem;
+    }
+
+    .stack-label:first-child {
+      margin-top: 0;
+    }
+
+    /* Inline each card's content directly — no iframes here, just stacked divs */
+    .card + .card {
+      margin-top: 0; /* cards abut in a real case study page */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── HEADER ─────────────────────────────────────────────── -->
+  <div class="stack-label">header</div>
+  <div class="card" style="border-left:none; border-top:5px solid var(--epic-accent); padding:1.75rem 1.75rem 1.25rem;">
+    <div class="card__label">EPIC Case Study</div>
+    <h1 class="card__title">[Project Title]</h1>
+    <p class="card__body" style="color:#555;">[Descriptor sentence — collaboration, scope, partner.]</p>
+    <div class="card__meta" style="display:flex;flex-wrap:wrap;gap:0.5rem 1.5rem;font-size:0.8rem;color:#666;margin-bottom:0.75rem;">
+      <span>· [Phase label]</span><span>· [Dates]</span><span>· [Location]</span>
+    </div>
+    <span style="display:inline-block;border:1px solid var(--epic-accent);color:var(--epic-accent);font-size:0.72rem;font-weight:bold;text-transform:uppercase;padding:0.25rem 0.65rem;border-radius:2px;">[Funding source]</span>
+    <div class="card__divider"></div>
+  </div>
+
+  <!-- ── SUMMARY ────────────────────────────────────────────── -->
+  <div class="stack-label">summary</div>
+  <div class="card">
+    <div class="card__label">Public Summary</div>
+    <p class="card__body">[150–200 word executive summary. Active voice. Who collaborated, what problem, what was done, what changed, why it matters.]</p>
+    <div class="card__divider"></div>
+  </div>
+
+  <!-- ── IDENTITY ───────────────────────────────────────────── -->
+  <div class="stack-label">identity</div>
+  <div class="card">
+    <div class="card__label">Key Project Details</div>
+    <table class="card__table">
+      <tbody>
+        <tr><th>Institution</th><td>Mohawk College</td></tr>
+        <tr><th>Innovation Centre</th><td>Energy &amp; Power Innovation Centre (EPIC)</td></tr>
+        <tr><th>Industry Partner</th><td>[Partner name]</td></tr>
+        <tr><th>Sector</th><td>[Sector]</td></tr>
+        <tr><th>Location</th><td>[City, Province, Canada]</td></tr>
+        <tr><th>Duration</th><td>[Start] – [End] ([N] months)</td></tr>
+        <tr><th>Funding</th><td>[Source and amount]</td></tr>
+        <tr><th>IP Framework</th><td>[IP terms]</td></tr>
+        <tr><th>Collaboration Type</th><td>[Type]</td></tr>
+      </tbody>
+    </table>
+    <div class="card__divider"></div>
+  </div>
+
+  <!-- ── PHASE HEADER (multi-phase only) ───────────────────── -->
+  <div class="stack-label">phase-header</div>
+  <div class="card" style="background:var(--epic-accent);border-left:none;padding:1rem 1.75rem;">
+    <div style="font-size:1.1rem;font-weight:bold;color:var(--epic-white);margin-bottom:0.25rem;">Phase 1: [Phase Name]</div>
+    <div style="font-size:0.85rem;color:rgba(255,255,255,0.8);">[Start date] – [End date]</div>
+  </div>
+
+  <!-- ── CHALLENGE ──────────────────────────────────────────── -->
+  <div class="stack-label">challenge</div>
+  <div class="card">
+    <div class="card__label">Industry Challenge</div>
+    <p class="card__body">[Framing sentence for the problem space.]</p>
+    <ul class="card__list">
+      <li>[Specific challenge 1]</li>
+      <li>[Specific challenge 2]</li>
+      <li>[Specific challenge 3]</li>
+    </ul>
+    <div class="card__divider"></div>
+  </div>
+
+  <!-- ── CAPABILITIES ───────────────────────────────────────── -->
+  <div class="stack-label">capabilities</div>
+  <div class="card">
+    <div class="card__label">EPIC Capabilities Applied</div>
+    <ul class="card__list">
+      <li>[Capability 1]</li>
+      <li>[Capability 2]</li>
+      <li>[Capability 3]</li>
+    </ul>
+    <div class="card__divider"></div>
+  </div>
+
+  <!-- ── TEAM ───────────────────────────────────────────────── -->
+  <div class="stack-label">team</div>
+  <div class="card">
+    <div class="card__label">EPIC Research Team</div>
+    <table class="card__table">
+      <thead><tr><th>Team Member</th><th>Role &amp; Contribution</th></tr></thead>
+      <tbody>
+        <tr><td>[Name]</td><td>[Role and specific contribution]</td></tr>
+        <tr><td>[Name]</td><td>[Role and specific contribution]</td></tr>
+      </tbody>
+    </table>
+    <div class="card__divider"></div>
+  </div>
+
+  <!-- ── PARTNER CONTRIBUTION ───────────────────────────────── -->
+  <div class="stack-label">partner-contribution</div>
+  <div class="card">
+    <div class="card__label">Industry Partner Contribution</div>
+    <p class="card__body">[Partner name] contributed the following:</p>
+    <ul class="card__list">
+      <li>[Contribution 1]</li>
+      <li>[Contribution 2]</li>
+    </ul>
+    <div class="card__divider"></div>
+  </div>
+
+  <!-- ── COLLABORATION MODEL ────────────────────────────────── -->
+  <div class="stack-label">collaboration-model</div>
+  <div class="card">
+    <div class="card__label">Collaboration Model</div>
+    <table class="card__table">
+      <tbody>
+        <tr><th>Engagement Type</th><td>[Type]</td></tr>
+        <tr><th>Funding Structure</th><td>[Funder, amounts]</td></tr>
+        <tr><th>IP Framework</th><td>[IP terms]</td></tr>
+        <tr><th>Duration</th><td>[N months]</td></tr>
+        <tr><th>Total Value</th><td>[$ amount]</td></tr>
+        <tr><th>Deliverables</th><td>[List of deliverables]</td></tr>
+      </tbody>
+    </table>
+    <div class="card__divider"></div>
+  </div>
+
+  <!-- ── SOLUTION ───────────────────────────────────────────── -->
+  <div class="stack-label">solution</div>
+  <div class="card">
+    <div class="card__label">Solution &amp; Implementation</div>
+    <p class="card__body">[Overview sentence of the approach.]</p>
+    <h3 class="card__subtitle">1. [Component name]</h3>
+    <p class="card__body">[Description of this component.]</p>
+    <h3 class="card__subtitle">2. [Component name]</h3>
+    <p class="card__body">[Description.]</p>
+    <div class="card__divider"></div>
+  </div>
+
+  <!-- ── RESULTS ────────────────────────────────────────────── -->
+  <div class="stack-label">results</div>
+  <div class="card">
+    <div class="card__label">Results &amp; Evidence</div>
+    <table class="card__table">
+      <thead><tr><th>Outcome</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td>[Outcome area]</td><td>[Quantified result]</td></tr>
+        <tr><td>[Outcome area]</td><td>[Quantified result]</td></tr>
+        <tr><td>[Outcome area]</td><td style="color:#999;font-style:italic;">Pending confirmation</td></tr>
+      </tbody>
+    </table>
+    <div class="card__divider"></div>
+  </div>
+
+  <!-- ── IMPACT ─────────────────────────────────────────────── -->
+  <div class="stack-label">impact</div>
+  <div class="card">
+    <div class="card__label">Impact</div>
+    <h3 class="card__subtitle">Industry Partner</h3>
+    <ul class="card__list">
+      <li>[Impact item]</li>
+      <li>[Impact item]</li>
+    </ul>
+    <div style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid #ebebeb;">
+      <h3 class="card__subtitle">EPIC</h3>
+      <ul class="card__list">
+        <li>[New expertise or experience gained]</li>
+        <li>[Other EPIC impact]</li>
+      </ul>
+    </div>
+    <div class="card__divider"></div>
+  </div>
+
+  <!-- ── CHART (optional) ───────────────────────────────────── -->
+  <div class="stack-label">chart (optional)</div>
+  <div class="card">
+    <div class="card__label">[Chart metric name]</div>
+    <div style="width:100%;min-height:200px;background:#f8f8f8;border:1px dashed #ccc;display:flex;align-items:center;justify-content:center;color:#999;font-size:0.85rem;font-style:italic;margin:0.75rem 0;">[Chart goes here]</div>
+    <p style="font-size:0.8rem;color:#666;">[Source / methodology note]</p>
+    <div class="card__divider"></div>
+  </div>
+
+  <!-- ── SECTORS ────────────────────────────────────────────── -->
+  <div class="stack-label">sectors</div>
+  <div class="card">
+    <div class="card__label">Sectors: Who This Model Applies To</div>
+    <p class="card__body">[Intro sentence on reusability of the collaboration model.]</p>
+    <ul class="card__list">
+      <li>[Sector or org type]</li>
+      <li>[Sector or org type]</li>
+      <li>[Sector or org type]</li>
+    </ul>
+    <div class="card__divider"></div>
+  </div>
+
+  <!-- ── TAGS + CTA ─────────────────────────────────────────── -->
+  <div class="stack-label">tags-cta</div>
+  <div class="card" style="border-left-color:var(--epic-orange);">
+    <div class="card__label">Tags</div>
+    <div style="margin-bottom:1.25rem;line-height:2;">
+      <span class="card__tag">[Tag 1]</span>
+      <span class="card__tag">[Tag 2]</span>
+      <span class="card__tag">[Tag 3]</span>
+      <span class="card__tag">[Tag 4]</span>
+    </div>
+    <p style="font-size:0.85rem;font-weight:bold;color:var(--epic-charcoal);margin-bottom:0.35rem;">[Contextual CTA question]</p>
+    <p style="font-size:0.9rem;">EPIC can help. Contact us at <a href="mailto:epic@mohawkcollege.ca" style="color:var(--epic-accent);font-weight:bold;text-decoration:none;">epic@mohawkcollege.ca</a></p>
+  </div>
+
+</body>
+</html>

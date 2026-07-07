@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Project Title] — Results &amp; Evidence</title>
+  <link rel="stylesheet" href="../assets/epic-theme.css">
+  <style>
+    .card__table td.pending {
+      color: #999;
+      font-style: italic;
+    }
+
+    .card__note {
+      font-size: 0.8rem;
+      color: #888;
+      margin-top: 0.75rem;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="card__label">Results &amp; Evidence</div>
+    <table class="card__table">
+      <thead>
+        <tr>
+          <th>Outcome</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>[Outcome area, e.g. Operational Efficiency]</td>
+          <td>[Quantified result, e.g. 20% improvement]</td>
+        </tr>
+        <tr>
+          <td>[Outcome area]</td>
+          <td>[Result]</td>
+        </tr>
+        <tr>
+          <td>[Outcome area]</td>
+          <!-- TODO: verify — replace when confirmed data is available -->
+          <td class="pending">Pending post-implementation measurement</td>
+        </tr>
+        <!-- Add or remove rows as needed -->
+      </tbody>
+    </table>
+    <!-- Remove this note if all results are confirmed -->
+    <p class="card__note">
+      * Results marked as pending will be updated once post-implementation data is confirmed.
+    </p>
+    <div class="card__divider"></div>
+  </div>
+</body>
+</html>
