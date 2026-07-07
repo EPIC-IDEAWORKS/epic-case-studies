@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daifuku Phase 2 — Solution &amp; Implementation</title>
+  <link rel="stylesheet" href="../assets/epic-theme.css">
+  <style>
+    .card__section {
+      margin-top: 1.1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #ebebeb;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="card__label">Solution &amp; Implementation — Phase 2</div>
+    <p class="card__body">
+      EPIC designed and implemented the following components as part of the Phase 2 collaboration,
+      all building on the AWS cloud platform and SMS established in Phase 1.
+    </p>
+
+    <div class="card__section">
+      <h3 class="card__subtitle">1. Metrics and Trending Analytics Pipeline (Python / Jupyter Notebooks)</h3>
+      <p class="card__body">
+        Before adding any reporting to the SMS platform, EPIC built a Python-based Jupyter Notebook
+        analytics pipeline to acquire, store, and iteratively develop production metrics in close
+        collaboration with Daifuku's management team. Metrics developed and validated included:
+      </p>
+      <ul class="card__list">
+        <li>High volumes of jobs sharing a common due date, to surface scheduling pressure before it becomes a production crisis</li>
+        <li>Job counts by station with threshold monitoring, to flag overloaded cells in real time</li>
+        <li>Daily job flow in and out of stations, to track throughput and identify stoppages</li>
+        <li>Exploratory additional metrics to surface previously untracked problem areas across the plant</li>
+      </ul>
+    </div>
+
+    <div class="card__section">
+      <h3 class="card__subtitle">2. Live Management Reporting Page in the SMS Platform</h3>
+      <p class="card__body">
+        Once the right metrics were established through the pipeline, EPIC implemented them as a
+        live reporting page within the existing Phase 1 SMS platform. The reporting page includes:
+      </p>
+      <ul class="card__list">
+        <li>Pie chart showing distribution of jobs by plant</li>
+        <li>Average completions per day, capacity gap, and days-to-clear metrics</li>
+        <li>Modified Z-Score anomaly detection for duration-of-stay at each cell (based on median), to surface outlier cells indicating production problems</li>
+        <li>Net jobs and median stay-at-cell reporting</li>
+        <li>Jobs completed per cell with selectable date ranges</li>
+      </ul>
+    </div>
+
+    <div class="card__section">
+      <h3 class="card__subtitle">3. Cobot Integration — Generic Shape Programming Script</h3>
+      <p class="card__body">
+        EPIC updated and upgraded the generic scripting framework for Cobot shape operations,
+        consolidating multiple custom scripts into a single flexible program designed to meet
+        the majority of generic shapes requirements.
+      </p>
+    </div>
+
+    <div class="card__section">
+      <h3 class="card__subtitle">4. Python-based Web App — Work-Orders Document Manager</h3>
+      <p class="card__body">
+        EPIC developed and implemented a semi-automated, web-based document management system
+        for uploading and managing files and schematics tied to existing work orders, accessible
+        from any device on the on-premises network.
+      </p>
+    </div>
+
+    <div class="card__section">
+      <h3 class="card__subtitle">5. Barcode Scanner Integration</h3>
+      <p class="card__body">
+        EPIC integrated a barcode scanner with the Cobot to enable automatic scanning and logging
+        of work orders prior to job execution. This integration was implemented on-device, with
+        research and initial planning completed for future API-based connection to the cloud platform.
+      </p>
+    </div>
+
+    <div class="card__section">
+      <h3 class="card__subtitle">6. Workforce Training and Knowledge Transfer</h3>
+      <p class="card__body">
+        EPIC designed and delivered training programs to ensure Daifuku's workforce can operate,
+        maintain, and build upon the SMS reporting page and Cobot integrations without ongoing
+        dependency on EPIC.
+      </p>
+    </div>
+
+    <div class="card__divider"></div>
+  </div>
+</body>
+</html>
