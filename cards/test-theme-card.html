@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="../assets/epic-theme.css">
   <style>
     .card {
+      background: var(--epic-white);
       border-left: 4px solid var(--epic-accent);
       padding: 1.25rem 1.5rem;
       max-width: 800px;
@@ -65,7 +66,8 @@
       This card validates that <code>epic-theme.css</code> loads correctly and that all four
       CSS custom properties render as expected: accent colour (left border), soft accent
       (tag background), display font (headings), and body font (this paragraph).
-      Background should be transparent when embedded in an iframe.
+      The card itself has a white background; the iframe viewport (html/body) remains
+      transparent so the host page colour frames the card at the edges.
     </p>
     <span class="card__tag">DSI</span>
     <span class="card__tag">LCRP</span>
