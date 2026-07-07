@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Transformation at Daifuku Manufacturing Canada — EPIC Case Study</title>
+  <link rel="stylesheet" href="../../assets/epic-theme.css">
+  <style>
+    /* ── Site chrome ─────────────────────────────────────────── */
+    .site-header {
+      background: var(--epic-white);
+      border-bottom: 1px solid #e8e8e8;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .site-header__logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+      text-decoration: none;
+    }
+
+    .site-header__logo-top {
+      font-size: 0.95rem;
+      font-weight: bold;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--epic-charcoal);
+    }
+
+    .site-header__logo-bottom {
+      font-size: 0.72rem;
+      font-weight: bold;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--epic-orange);
+    }
+
+    .site-header__back {
+      font-size: 0.82rem;
+      color: var(--epic-accent);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .site-header__back:hover { text-decoration: underline; }
+
+    /* ── Link bar ────────────────────────────────────────────── */
+    .link-bar {
+      background: #f5f5f5;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 0.6rem 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      align-items: center;
+    }
+
+    .link-bar__label {
+      font-size: 0.75rem;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: bold;
+    }
+
+    .link-bar__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.82rem;
+      font-weight: bold;
+      color: var(--epic-accent);
+      text-decoration: none;
+      border: 1px solid var(--epic-accent);
+      padding: 0.25rem 0.65rem;
+      border-radius: 2px;
+    }
+
+    .link-bar__link:hover {
+      background: var(--epic-accent);
+      color: var(--epic-white);
+    }
+
+    /* ── Card stack ──────────────────────────────────────────── */
+    .card-stack {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    /* Header card variant */
+    .card--header {
+      border-left: none;
+      border-top: 5px solid var(--epic-accent);
+      padding: 1.75rem 1.75rem 1.25rem;
+    }
+
+    .card__meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.5rem;
+      font-size: 0.8rem;
+      color: #666;
+      margin-bottom: 0.75rem;
+    }
+
+    .card__meta span::before {
+      content: '·';
+      margin-right: 0.4rem;
+      color: var(--epic-accent);
+    }
+
+    .card__descriptor {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .card__badges { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+    .card__funding {
+      display: inline-block;
+      border: 1px solid var(--epic-accent);
+      color: var(--epic-accent);
+      font-size: 0.72rem;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      border-radius: 2px;
+    }
+
+    /* Phase header variant */
+    .card--phase1 {
+      background: var(--epic-accent);
+      border-left: none;
+      padding: 1rem 1.75rem;
+    }
+
+    .card--phase2 {
+      background: var(--epic-accent-soft);
+      border-left: none;
+      padding: 1rem 1.75rem;
+    }
+
+    .card__phase {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--epic-white);
+      margin-bottom: 0.25rem;
+    }
+
+    .card__date-range {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.8);
+    }
+
+    /* Identity card double-table */
+    .phase-row th {
+      background: #f7f7f7;
+      color: var(--epic-charcoal);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* Summary CTA */
+    .card__cta {
+      display: inline-block;
+      margin-top: 1rem;
+      background: var(--epic-accent);
+      color: var(--epic-white);
+      font-size: 0.85rem;
+      font-weight: bold;
+      padding: 0.5rem 1.1rem;
+      text-decoration: none;
+      border-radius: 2px;
+    }
+
+    /* Solution sections */
+    .card__section {
+      margin-top: 1.1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #ebebeb;
+    }
+
+    /* Impact sections */
+    .card__section + .card__section {
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid #ebebeb;
+    }
+
+    /* Results pending */
+    .card__table td.pending { color: #999; font-style: italic; }
+    .card__note { font-size: 0.8rem; color: #888; margin-top: 0.75rem; font-style: italic; }
+
+    /* Tags card */
+    .card--tags { border-left-color: var(--epic-orange); }
+    .card__tags { margin-bottom: 1.25rem; line-height: 2; }
+    .card__cta-heading { font-size: 0.85rem; font-weight: bold; color: var(--epic-charcoal); margin-bottom: 0.35rem; }
+    .card__contact { font-size: 0.9rem; }
+    .card__contact a { color: var(--epic-accent); font-weight: bold; text-decoration: none; }
+
+    /* Team table responsive */
+    @media (max-width: 500px) {
+      .card__table thead { display: none; }
+      .card__table tr    { display: block; padding: 0.5rem 0; }
+      .card__table td    { display: block; width: 100%; padding: 0.15rem 0.75rem; border: none; }
+      .card__table td:first-child { font-weight: bold; color: var(--epic-accent); }
+    }
+
+    /* ── Site footer ─────────────────────────────────────────── */
+    .site-footer {
+      background: var(--epic-charcoal);
+      color: rgba(255,255,255,0.6);
+      font-size: 0.8rem;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+    }
+
+    .site-footer a { color: var(--epic-orange); text-decoration: none; }
+    .site-footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="site-header__logo" href="../../index.html">
+      <span class="site-header__logo-top">Mohawk</span>
+      <span class="site-header__logo-bottom">IDEAWORKS · EPIC</span>
+    </a>
+    <a class="site-header__back" href="../../index.html">← All Projects</a>
+  </header>
+
+  <div class="link-bar">
+    <span class="link-bar__label">Also available:</span>
+    <!-- TODO: verify — replace # with the real Mohawk College StoryMap URL when published -->
+    <a class="link-bar__link" href="#" target="_blank" rel="noopener">View on Mohawk College ↗</a>
+  </div>
+
+  <main class="card-stack">
+
+    <!-- HEADER -->
+    <div class="card card--header">
+      <div class="card__label">EPIC Case Study</div>
+      <h1 class="card__title">Digital Transformation at Daifuku Manufacturing Canada: A Two-Phase Industry 4.0 Collaboration with Mohawk College EPIC</h1>
+      <p class="card__descriptor">A multi-phase collaboration between Mohawk College's Energy &amp; Power Innovation Centre (EPIC) and Daifuku Manufacturing Canada Corporation (formerly Jervis Webb).</p>
+      <div class="card__meta">
+        <span>Phases 1 &amp; 2</span>
+        <span>September 2023 – February 2026</span>
+        <span>Hamilton, Ontario, Canada</span>
+      </div>
+      <div class="card__badges">
+        <span class="card__funding">OCI C2C — Phase 1</span>
+        <span class="card__funding">Fee-for-Service — Phase 2</span>
+      </div>
+      <div class="card__divider"></div>
+    </div>
+
+    <!-- SUMMARY -->
+    <div class="card">
+      <div class="card__label">Public Summary</div>
+      <p class="card__body">Daifuku Manufacturing Canada Corporation is a leader in custom material handling systems, producing solutions for the automotive, airport, and industrial sectors from its Hamilton, Ontario facility. The facility operates more than 20 simultaneous production cells, with equipment ranging from modern robotics to machinery dating back to the 1950s. Daifuku faced compounding challenges: manual production tracking, untracked downtime, excess material waste, high energy consumption, and no real-time visibility into plant operations.</p>
+      <p class="card__body">Beginning in 2023, Daifuku and Mohawk College's Energy &amp; Power Innovation Centre (EPIC) embarked on a two-phase digital transformation collaboration spanning over two years. Phase 1 delivered a plant-wide IoT monitoring system, cloud analytics platform, and a full Scope 1, 2, and 3 GHG emissions assessment — resulting in a 20% improvement in operational efficiency, a 10 to 15% reduction in material waste, and a reduction in client onboarding time from three weeks to less than one day. Phase 2 extended those foundations with live production reporting, a metrics and trending analytics pipeline, Cobot integration, and a work-order document management system.</p>
+      <p class="card__body">Together, the two phases have positioned Daifuku as a data-driven manufacturer with a scalable digital infrastructure it fully owns, spanning plant-wide IoT monitoring, energy management, carbon emissions accounting, live production reporting, and on-device Cobot automation.</p>
+      <div class="card__divider"></div>
+    </div>
+
+    <!-- IDENTITY -->
+    <div class="card">
+      <div class="card__label">Key Project Details</div>
+      <table class="card__table">
+        <tbody>
+          <tr class="phase-row"><th colspan="3">Phase Comparison</th></tr>
+          <tr>
+            <th style="width:25%;"></th>
+            <th style="width:37.5%;color:var(--epic-charcoal);font-size:0.82rem;">Phase 1</th>
+            <th style="width:37.5%;color:var(--epic-charcoal);font-size:0.82rem;">Phase 2</th>
+          </tr>
+          <tr><th>Duration</th><td>12 months (September 2023 – August 2024)</td><td>6 months (September 2025 – February 2026)</td></tr>
+          <tr><th>Funding</th><td>OCI C2C: $100,000 OCI + $147,731 Jervis Webb = $247,731 total</td><td>Fee-for-service (Mohawk College); OCI funding (Daifuku)</td></tr>
+          <tr><th>Focus</th><td>IoT monitoring, cloud analytics, energy submetering, RFID work-order tracking, Scope 1/2/3 GHG emissions assessment</td><td>Shop Management Software, production dashboards, bottleneck analytics, Cobot integration</td></tr>
+          <tr><th>Total Value</th><td>$247,731</td><td>$331,624 (Mohawk subcontracted at $60,720)</td></tr>
+        </tbody>
+      </table>
+      <table class="card__table" style="margin-top:1rem;">
+        <tbody>
+          <tr><th>Institution</th><td>Mohawk College</td></tr>
+          <tr><th>Innovation Centre</th><td>Energy &amp; Power Innovation Centre (EPIC)</td></tr>
+          <tr><th>Industry Partner</th><td>Daifuku Manufacturing Canada Corporation (formerly Jervis Webb)</td></tr>
+          <tr><th>Sector</th><td>Manufacturing – Material Handling Automation</td></tr>
+          <tr><th>Location</th><td>Hamilton, Ontario, Canada</td></tr>
+          <tr><th>IP Framework</th><td>Daifuku retains full intellectual property rights to all collaborative deliverables</td></tr>
+          <tr><th>Collaboration Type</th><td>Applied research / technology demonstration</td></tr>
+        </tbody>
+      </table>
+      <div class="card__divider"></div>
+    </div>
+
+    <!-- PHASE 1 HEADER -->
+    <div class="card card--phase1">
+      <div class="card__phase">Phase 1: IoT Monitoring, Energy Management &amp; Cloud Analytics</div>
+      <div class="card__date-range">September 2023 – August 2024</div>
+    </div>
+
+    <!-- PHASE 1 CHALLENGE -->
+    <div class="card">
+      <div class="card__label">Industry Challenge — Phase 1</div>
+      <p class="card__body">In 2023, Daifuku Manufacturing Canada Corporation approached EPIC to address the high energy consumption of its production processes. As the collaboration developed, the scope expanded to encompass the following core operational challenges:</p>
+      <ul class="card__list">
+        <li><strong>Manual production management:</strong> Daifuku relied on manual processes to assign tasks, monitor progress, and track energy and equipment usage across more than 20 simultaneous production cells.</li>
+        <li><strong>Aging and heterogeneous equipment:</strong> Equipment ranged from modern systems to machinery dating back to the 1950s, resulting in inconsistent monitoring capabilities and limited visibility into usage, energy consumption, and production flow.</li>
+        <li><strong>Untracked inefficiencies:</strong> Manual processes resulted in production inefficiencies, excess material waste, and untracked downtime with no mechanism to quantify or address these losses.</li>
+        <li><strong>Energy consumption:</strong> No visibility into plant-wide or work-cell-level energy use, preventing targeted interventions or strategic equipment shutdowns for effective peak shaving to manage Global Adjustment charges.</li>
+        <li><strong>Carbon emissions:</strong> Daifuku's corporate office mandated that all plants track, quantify, and reduce Scope 1, 2, and 3 GHG emissions. The Hamilton facility lacked the expertise and tools to quantify its full carbon footprint or identify reduction opportunities.</li>
+        <li><strong>Client onboarding:</strong> New client production setup required approximately three weeks due to manual configuration and tracking processes.</li>
+      </ul>
+      <div class="card__divider"></div>
+    </div>
+
+    <!-- PHASE 1 CAPABILITIES -->
+    <div class="card">
+      <div class="card__label">EPIC Capabilities Applied — Phase 1</div>
+      <ul class="card__list">
+        <li>IoT system architecture and plant-wide deployment using AWS IoT Core</li>
+        <li>Cloud platform development using AWS DynamoDB, Lambda, and Amplify</li>
+        <li>Full-stack software development using Next.js and TypeScript for long-term maintainability</li>
+        <li>Energy and natural gas meter design and integration at the plant and work-cell level</li>
+        <li>RFID-based work-order tracking system design and implementation</li>
+        <li>Embedded systems and data acquisition hardware deployment across legacy and modern equipment, with scalable architecture design</li>
+        <li>Analytics and KPI dashboard development</li>
+        <li>GHG emissions accounting using the GHG Protocol framework for Scope 1, 2, and 3 emissions quantification and baseline setting</li>
+        <li>Carbon reduction opportunity identification and data collection guidance across all three emission scopes</li>
+      </ul>
+      <div class="card__divider"></div>
+    </div>
+
+    <!-- PHASE 1 TEAM -->
+    <div class="card">
+      <div class="card__label">EPIC Research Team — Phase 1</div>
+      <table class="card__table">
+        <thead><tr><th>Team Member</th><th>Role &amp; Contribution</th></tr></thead>
+        <tbody>
+          <tr><td>Dr. Mariano Arriaga</td><td>General Manager. Provided strategic direction and technical oversight for the collaboration, drawing on his expertise in power systems and operational efficiency.</td></tr>
+          <tr><td>Gord Bond</td><td>Software Development &amp; Architecture. Led cloud architecture design and full-stack platform development, including the AWS-based monitoring and analytics platform using Next.js and TypeScript.</td></tr>
+          <tr><td>Rutul Bhavsar</td><td>Hardware &amp; Data Acquisition. Led designing and deployment of the custom IoT data acquisition systems, integrating energy, environmental, and production sensors across the facility and connecting them to the cloud platform.</td></tr>
+          <tr><td>Shefaza Esmail</td><td>R&amp;D Lead, Low Carbon Readiness Program. Led the GHG emissions assessment for the Hamilton facility, including Scope 1, 2, and 3 emissions quantification, baseline setting, data collection guidance, and carbon reduction recommendations.</td></tr>
+        </tbody>
+      </table>
+      <div class="card__divider"></div>
+    </div>
+
+    <!-- PHASE 1 PARTNER CONTRIBUTION -->
+    <div class="card">
+      <div class="card__label">Industry Partner Contribution — Phase 1</div>
+      <p class="card__body">Daifuku Manufacturing Canada Corporation contributed the following to the Phase 1 collaboration:</p>
+      <ul class="card__list">
+        <li>Access to the Hamilton facility and all production cells for IoT sensor installation and system integration</li>
+        <li>Collaboration of the Daifuku Maintenance Team throughout design, installation, and commissioning</li>
+        <li>Operational data and production context to inform platform and dashboard design</li>
+        <li>Diverse equipment inventory, including legacy machinery dating back to the 1950s, as the integration environment for the IoT system</li>
+      </ul>
+      <div class="card__divider"></div>
+    </div>
+
+    <!-- PHASE 1 COLLABORATION MODEL -->
+    <div class="card">
+      <div class="card__label">Collaboration Model — Phase 1</div>
+      <table class="card__table">
+        <tbody>
+          <tr><th>Engagement Type</th><td>Applied research, Collaborate 2 Commercialize (C2C)</td></tr>
+          <tr><th>Funding Structure</th><td>OCI C2C: $100,000 (OCI) + $147,731 (Jervis Webb) = $247,731 total. GHG emissions work additionally funded by NRC-IRAP.</td></tr>
+          <tr><th>IP Framework</th><td>Daifuku retains full intellectual property rights</td></tr>
+          <tr><th>Duration</th><td>12 months (September 2023 – August 2024)</td></tr>
+          <tr><th>Deliverables</th><td>Plant-wide IoT monitoring system, cloud-based analytics platform, energy and natural gas submetering, RFID work-order tracking, KPI dashboards, Scope 1 and 2 emissions calculator and baseline template, Scope 3 emissions calculator, GHG emissions report with reduction recommendations</td></tr>
+        </tbody>
+      </table>
+      <div class="card__divider"></div>
+    </div>
+
+    <!-- PHASE 1 SOLUTION -->
+    <div class="card">
+      <div class="card__label">Solution &amp; Implementation — Phase 1</div>
+      <p class="card__body">EPIC collaborated with the Daifuku team to design and deploy a custom IoT monitoring system integrated with a cloud-based analytics platform plant-wide. The solution was built to accommodate Daifuku's heterogeneous equipment inventory and flexible, multi-client production environment.</p>
+      <div class="card__section">
+        <h3 class="card__subtitle">IoT Monitoring System</h3>
+        <p class="card__body">EPIC deployed IoT sensors and data acquisition hardware across the Hamilton facility, connecting legacy and modern equipment to a unified cloud platform. The system provided:</p>
+        <ul class="card__list">
+          <li>Plant-wide electricity and natural gas monitoring and energy submetering at the work-cell level, enabling identification of high-consumption equipment and targeted equipment shutdown strategies</li>
+          <li>Real-time equipment status monitoring across all active production cells</li>
+          <li>Equipment usage and downtime tracking, quantifying previously invisible production losses</li>
+          <li>RFID-based part and work-order tracking through the production flow</li>
+          <li>Performance KPIs surfaced through the analytics platform</li>
+        </ul>
+      </div>
+      <div class="card__section">
+        <h3 class="card__subtitle">GHG Emissions Assessment</h3>
+        <p class="card__body">Concurrently with the IoT and platform work, EPIC's Low Carbon Readiness Program (LCRP) conducted a full Scope 1, 2, and 3 GHG emissions assessment of the Daifuku Hamilton facility using the GHG Protocol and Scope 3 Technical Guidance as the framework. The LCRP team:</p>
+        <ul class="card__list">
+          <li>Reviewed Daifuku's existing Scope 1 and 2 work, performed calculations to quantify facility emissions, and provided guidance to establish an emissions baseline</li>
+          <li>Identified the four most relevant Scope 3 categories and calculated associated emissions: Category 1 (Purchased Goods and Services), Category 4 (Upstream Transport and Distribution), Category 5 (Waste from Operations), and Category 11 (Use of Sold Products)</li>
+          <li>Provided guidance to improve Daifuku's data collection and tracking processes for all four Scope 3 categories</li>
+          <li>Identified and recommended high-level carbon reduction opportunities across Scope 1, 2, and each Scope 3 category</li>
+        </ul>
+      </div>
+      <div class="card__section">
+        <h3 class="card__subtitle">Cloud Analytics Platform</h3>
+        <p class="card__body">EPIC designed and deployed a scalable, multi-tenant cloud platform using AWS IoT Core, DynamoDB, Lambda, and Amplify. Next.js and TypeScript were selected to ensure long-term maintainability and to simplify future updates, feature expansion, and scalability. The platform serves as the central hub for all monitoring, analytics, and reporting.</p>
+      </div>
+      <div class="card__divider"></div>
+    </div>
+
+    <!-- PHASE 1 RESULTS -->
+    <div class="card">
+      <div class="card__label">Results &amp; Evidence — Phase 1</div>
+      <table class="card__table">
+        <thead><tr><th>Outcome</th><th>Result</th></tr></thead>
+        <tbody>
+          <tr><td>Operational Efficiency</td><td>20% improvement in operational efficiency</td></tr>
+          <tr><td>Material Waste</td><td>10 to 15% reduction in material waste</td></tr>
+          <tr><td>Energy Savings</td><td class="pending">Significant savings achieved through targeted submetering and strategic equipment shutdowns — quantification ongoing</td></tr>
+          <tr><td>Client Onboarding Time</td><td>Reduced from 3 weeks to less than 1 day</td></tr>
+          <tr><td>New Revenue Stream</td><td>Daifuku is commercializing the platform to other manufacturers, enabled by full IP ownership of the collaborative deliverables</td></tr>
+          <tr><td>Scope 1 Emissions (2024)</td><td>352.7 tCO2e total — natural gas consumption accounts for 92% of Scope 1 emissions</td></tr>
+          <tr><td>Scope 2 Emissions (2024)</td><td>26.5 tCO2e total (Plant 1 and Plant 2 combined)</td></tr>
+          <tr><td>Scope 3 Emissions (4 categories)</td><td>4,224 tCO2e total: Category 1 (428.6 tCO2e), Category 4 (212.9 tCO2e), Category 5 (51.9 tCO2e), Category 11 (3,530.6 tCO2e)</td></tr>
+          <tr><td>GHG Deliverables</td><td>Report detailing Scope 1–3 findings and recommendations; Scope 3 emissions calculator (Excel); Scope 1 and 2 emissions calculator and baseline tracking template (Excel)</td></tr>
+        </tbody>
+      </table>
+      <div class="card__divider"></div>
+    </div>
+
+    <!-- PHASE 1 IMPACT -->
+    <div class="card">
+      <div class="card__label">Impact — Phase 1</div>
+      <div class="card__section" style="margin-top:0;border-top:none;padding-top:0;">
+        <h3 class="card__subtitle">Industry Partner</h3>
+        <p class="card__body">Phase 1 gave Daifuku Manufacturing Canada Corporation its first real-time, plant-wide view of production, equipment, and energy use. Specific impacts include:</p>
+        <ul class="card__list">
+          <li>Digitization of legacy infrastructure that was previously unmonitorable</li>
+          <li>Foundation for predictive maintenance and data-driven capital planning</li>
+          <li>A new commercial opportunity: Daifuku is now offering the platform to other manufacturers, creating a revenue stream that did not exist before the collaboration</li>
+          <li>Reduction in client onboarding from three weeks to less than one day, directly improving Daifuku's service capacity and competitiveness</li>
+          <li>A complete, quantified carbon footprint for the Hamilton facility covering Scope 1, 2, and 3 emissions, putting the plant in good standing with Daifuku's corporate sustainability requirements</li>
+          <li>Functional GHG tracking tools and reduction recommendations that Daifuku can use independently on an ongoing basis</li>
+        </ul>
+      </div>
+      <div class="card__section">
+        <h3 class="card__subtitle">EPIC</h3>
+        <p class="card__body">Through Phase 1, EPIC's team advanced expertise in:</p>
+        <ul class="card__list">
+          <li>Plant-wide IoT deployment in complex, legacy-rich manufacturing environments</li>
+          <li>Multi-tenant cloud platform architecture for industrial monitoring applications</li>
+          <li>Energy submetering integration and analytics for manufacturing facilities</li>
+          <li>RFID-based work-order and production tracking systems</li>
+          <li>GHG Protocol application for Scope 1, 2, and 3 emissions quantification in a manufacturing context</li>
+          <li>Scope 3 category identification, data collection guidance, and carbon reduction recommendations for a material handling manufacturer</li>
+        </ul>
+      </div>
+      <div class="card__divider"></div>
+    </div>
+
+    <!-- PHASE 2 HEADER -->
+    <div class="card card--phase2">
+      <div class="card__phase">Phase 2: Shop Management Software, Production Analytics &amp; Cobot Integration</div>
+      <div class="card__date-range">September 2025 – February 2026</div>
+    </div>
+
+    <!-- PHASE 2 CHALLENGE -->
+    <div class="card">
+      <div class="card__label">Industry Challenge — Phase 2</div>
+      <p class="card__body">Building on the Phase 1 monitoring infrastructure, Daifuku Manufacturing Canada Corporation identified the need to extend its digital capabilities from equipment monitoring to active production management and reporting. Specific challenges included:</p>
+      <ul class="card__list">
+        <li>No centralized, real-time visibility into where individual work orders stand across the plant's 20+ production cells at any given time</li>
+        <li>Managers lacked reporting tools to identify production bottlenecks and understand daily job flow in and out of each station</li>
+        <li>High volumes of jobs sharing common due dates created scheduling pressure with no system to anticipate or track it</li>
+        <li>No live management reporting page within the existing SMS platform — metrics and analytics had to be developed and validated before they could be surfaced to managers</li>
+        <li>Collaborative Robot (Cobot) programming for different part geometries required repetitive custom scripting, slowing deployment of new jobs</li>
+        <li>No automated mechanism for scanning and logging work orders prior to Cobot job execution</li>
+        <li>No accessible work-order document management system to reference for current jobs</li>
+      </ul>
+      <div class="card__divider"></div>
+    </div>
+
+    <!-- PHASE 2 CAPABILITIES -->
+    <div class="card">
+      <div class="card__label">EPIC Capabilities Applied — Phase 2</div>
+      <ul class="card__list">
+        <li>Python/Jupyter Notebook analytics pipeline development for iterative exploration and validation of production metrics with the management team</li>
+        <li>Live management reporting page development within the existing Phase 1 SMS platform, surfacing validated metrics in real time</li>
+        <li>Dashboard design for operational decision-making including statistical anomaly detection (modified Z-Score methodology)</li>
+        <li>Full-stack software development (Next.js, TypeScript, AWS) for SMS platform additions</li>
+        <li>Cobot programming support and generic scripting framework development and deployment</li>
+        <li>Barcode scanner integration into the Cobot firmware for automated work-order logging at the point of job execution</li>
+        <li>Research and initial planning for future Cobot API integration with the broader cloud platform</li>
+        <li>Workforce training design and delivery for technology adoption and knowledge transfer</li>
+        <li>Custom Python-based web application accessible from devices on-premises to manage work-order related documents</li>
+      </ul>
+      <div class="card__divider"></div>
+    </div>
+
+    <!-- PHASE 2 TEAM -->
+    <div class="card">
+      <div class="card__label">EPIC Research Team — Phase 2</div>
+      <table class="card__table">
+        <thead><tr><th>Team Member</th><th>Role &amp; Contribution</th></tr></thead>
+        <tbody>
+          <tr><td>Dr. Mariano Arriaga</td><td>General Manager. Provided strategic direction and technical oversight, ensuring Phase 2 built effectively on the Phase 1 infrastructure.</td></tr>
+          <tr><td>Erica Daly</td><td>Project Manager. Managed the project from proposal through final reporting, coordinated partner engagement with Daifuku's leadership and operations teams, and ensured deliverables were met within the six-month timeline.</td></tr>
+          <tr><td>Gord Bond</td><td>Software Solutions Architect. Led cloud architecture design, SMS platform development, dashboard development, and the metrics and trending analytics pipeline using AWS, Next.js, TypeScript, and Python.</td></tr>
+          <tr><td>Rutul Bhavsar</td><td>Industrial Communications Programmer. Led Cobot integration programming for generic scripting and developed custom Python-based web application for work-order document manager.</td></tr>
+          <tr><td>Lamar Webb</td><td>Technical Specialist, Hardware Integration. Full barcode scanner integration with the Cobot for automated work-order logging. Contributed to Cobot generic shapes scripting, full-stack development of the SMS platform and cloud data pipeline.</td></tr>
+          <tr><td>Pal Patel</td><td>Developer, Cloud Platform. Contributed to development of the cloud-based web application and platform additions, supporting backend systems, frontend interfaces, and workflow automation.</td></tr>
+        </tbody>
+      </table>
+      <div class="card__divider"></div>
+    </div>
+
+    <!-- PHASE 2 PARTNER CONTRIBUTION -->
+    <div class="card">
+      <div class="card__label">Industry Partner Contribution — Phase 2</div>
+      <p class="card__body">Daifuku Manufacturing Canada Corporation contributed the following to the Phase 2 collaboration:</p>
+      <ul class="card__list">
+        <li>Access to the Hamilton facility and its 20+ production cells for SMS integration, dashboard deployment, and Cobot programming</li>
+        <li>Production data, work order data, and scheduling context to inform dashboard and analytics pipeline design</li>
+        <li>Internal subject matter expertise on manufacturing workflows, bottlenecks, and reporting needs</li>
+        <li>Collaborative participation of the Daifuku Maintenance and Operations teams throughout development and deployment</li>
+        <li>Cobot hardware and associated operational environment for integration and testing</li>
+        <li>Plant-wide deployment of work-order document manager web app</li>
+      </ul>
+      <div class="card__divider"></div>
+    </div>
+
+    <!-- PHASE 2 COLLABORATION MODEL -->
+    <div class="card">
+      <div class="card__label">Collaboration Model — Phase 2</div>
+      <table class="card__table">
+        <tbody>
+          <tr><th>Engagement Type</th><td>Technology demonstration / applied research</td></tr>
+          <tr><th>Funding Structure</th><td>Fee-for-service (Mohawk College); OCI funding (Daifuku Manufacturing Canada Corporation)</td></tr>
+          <tr><th>IP Framework</th><td>Daifuku retains full intellectual property rights to all collaborative deliverables</td></tr>
+          <tr><th>Duration</th><td>6 months (September 2025 – February 2026)</td></tr>
+          <tr><th>Total Project Value</th><td>$331,624 (Mohawk College subcontracted at $60,720)</td></tr>
+          <tr><th>Deliverables</th><td>Shop Management Software (SMS), cloud dashboards, metrics and trending analytics pipeline, Cobot integration programming support, barcode scanner integration, document manager web app, workforce training</td></tr>
+        </tbody>
+      </table>
+      <div class="card__divider"></div>
+    </div>
+
+    <!-- PHASE 2 SOLUTION -->
+    <div class="card">
+      <div class="card__label">Solution &amp; Implementation — Phase 2</div>
+      <p class="card__body">EPIC designed and implemented the following components as part of the Phase 2 collaboration, all building on the AWS cloud platform and SMS established in Phase 1.</p>
+      <div class="card__section">
+        <h3 class="card__subtitle">1. Metrics and Trending Analytics Pipeline (Python / Jupyter Notebooks)</h3>
+        <p class="card__body">Before adding any reporting to the SMS platform, EPIC built a Python-based Jupyter Notebook analytics pipeline to acquire, store, and iteratively develop production metrics in close collaboration with Daifuku's management team. Metrics developed and validated included:</p>
+        <ul class="card__list">
+          <li>High volumes of jobs sharing a common due date, to surface scheduling pressure before it becomes a production crisis</li>
+          <li>Job counts by station with threshold monitoring, to flag overloaded cells in real time</li>
+          <li>Daily job flow in and out of stations, to track throughput and identify stoppages</li>
+          <li>Exploratory additional metrics to surface previously untracked problem areas across the plant</li>
+        </ul>
+      </div>
+      <div class="card__section">
+        <h3 class="card__subtitle">2. Live Management Reporting Page in the SMS Platform</h3>
+        <p class="card__body">Once the right metrics were established through the pipeline, EPIC implemented them as a live reporting page within the existing Phase 1 SMS platform. The reporting page includes:</p>
+        <ul class="card__list">
+          <li>Pie chart showing distribution of jobs by plant</li>
+          <li>Average completions per day, capacity gap, and days-to-clear metrics</li>
+          <li>Modified Z-Score anomaly detection for duration-of-stay at each cell (based on median), to surface outlier cells indicating production problems</li>
+          <li>Net jobs and median stay-at-cell reporting</li>
+          <li>Jobs completed per cell with selectable date ranges</li>
+        </ul>
+      </div>
+      <div class="card__section">
+        <h3 class="card__subtitle">3. Cobot Integration — Generic Shape Programming Script</h3>
+        <p class="card__body">EPIC updated and upgraded the generic scripting framework for Cobot shape operations, consolidating multiple custom scripts into a single flexible program designed to meet the majority of generic shapes requirements.</p>
+      </div>
+      <div class="card__section">
+        <h3 class="card__subtitle">4. Python-based Web App — Work-Orders Document Manager</h3>
+        <p class="card__body">EPIC developed and implemented a semi-automated, web-based document management system for uploading and managing files and schematics tied to existing work orders, accessible from any device on the on-premises network.</p>
+      </div>
+      <div class="card__section">
+        <h3 class="card__subtitle">5. Barcode Scanner Integration</h3>
+        <p class="card__body">EPIC integrated a barcode scanner with the Cobot to enable automatic scanning and logging of work orders prior to job execution. This integration was implemented on-device, with research and initial planning completed for future API-based connection to the cloud platform.</p>
+      </div>
+      <div class="card__section">
+        <h3 class="card__subtitle">6. Workforce Training and Knowledge Transfer</h3>
+        <p class="card__body">EPIC designed and delivered training programs to ensure Daifuku's workforce can operate, maintain, and build upon the SMS reporting page and Cobot integrations without ongoing dependency on EPIC.</p>
+      </div>
+      <div class="card__divider"></div>
+    </div>
+
+    <!-- PHASE 2 RESULTS -->
+    <div class="card">
+      <div class="card__label">Results &amp; Evidence — Phase 2</div>
+      <p class="card__body">Phase 2 was completed in February 2026. Quantitative outcome data is pending final post-implementation measurement and will be updated once Daifuku has completed its post-implementation analysis.</p>
+      <table class="card__table">
+        <thead><tr><th>Anticipated Outcome</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Real-time management reporting on work order locations, job flow, and cell performance across 20+ production cells</td><td class="pending">Delivered — quantitative impact pending measurement</td></tr>
+          <tr><td>Identification and quantification of production bottlenecks through the metrics and trending pipeline</td><td class="pending">Delivered — quantitative impact pending measurement</td></tr>
+          <tr><td>Reduced Cobot programming time through consolidated generic shape scripting</td><td class="pending">Delivered — quantitative impact pending measurement</td></tr>
+          <tr><td>Automated work order logging at point of Cobot execution via on-device barcode scanner integration</td><td class="pending">Delivered — quantitative impact pending measurement</td></tr>
+          <tr><td>Easy access to work-order related documents from any device on the plant network</td><td class="pending">Delivered — quantitative impact pending measurement</td></tr>
+          <tr><td>Foundation for future API-based integration of Cobot operational data into the cloud platform</td><td class="pending">Research and planning complete</td></tr>
+        </tbody>
+      </table>
+      <!-- TODO: verify — update once Daifuku provides post-implementation measurement data -->
+      <p class="card__note">* This section will be updated once post-implementation data is confirmed by Daifuku.</p>
+      <div class="card__divider"></div>
+    </div>
+
+    <!-- PHASE 2 IMPACT -->
+    <div class="card">
+      <div class="card__label">Impact — Phase 2</div>
+      <div class="card__section" style="margin-top:0;border-top:none;padding-top:0;">
+        <h3 class="card__subtitle">Industry Partner</h3>
+        <ul class="card__list">
+          <li>Managers gain real-time production reporting through a live page in the existing SMS platform, covering work order status, job flow, cell performance, and scheduling pressure</li>
+          <li>The metrics and trending pipeline surfaces bottlenecks and capacity gaps that were previously invisible to operations leadership</li>
+          <li>Dashboard anomaly detection (Z-Score methodology) provides an early-warning system for cells experiencing abnormal dwell times</li>
+          <li>Cobot integration improvements reduce setup time and increase repeatability for new part types</li>
+          <li>Reduced setup time and improved efficiency by providing technicians with easy access to work-order documents and schematics through the web application</li>
+          <li>Groundwork laid for future API integration of Cobot operational data into the cloud platform</li>
+          <li>Full IP ownership means Daifuku can extend or adapt the platform independently</li>
+        </ul>
+      </div>
+      <div class="card__section">
+        <h3 class="card__subtitle">EPIC</h3>
+        <ul class="card__list">
+          <li>Iterative analytics pipeline development using Python and Jupyter Notebooks for real-time production metrics in a live manufacturing environment</li>
+          <li>Live reporting page development within an existing SMS platform, translating data pipeline outputs into actionable management tools</li>
+          <li>Collaborative Robot (Cobot) programming, camera integration, and barcode scanner integration in an active industrial setting</li>
+          <li>Research and planning for Cobot API integration as a future cloud connectivity pathway</li>
+          <li>Statistical anomaly detection (Z-Score methodology) applied to production cell dwell time monitoring</li>
+        </ul>
+      </div>
+      <div class="card__divider"></div>
+    </div>
+
+    <!-- SECTORS -->
+    <div class="card">
+      <div class="card__label">Sectors: Who This Model Applies To</div>
+      <p class="card__body">The combined Phase 1 and Phase 2 framework — covering IoT monitoring, cloud-hosted shop management software, real-time production dashboards, carbon emissions accounting, work order tracking, and Cobot integration — is applicable to organizations in:</p>
+      <ul class="card__list">
+        <li><strong>Manufacturing</strong> (automotive, aerospace, electronics, consumer goods): any facility with multi-cell or multi-line production and legacy equipment</li>
+        <li><strong>Logistics and warehousing:</strong> facilities using automated or semi-automated material handling equipment</li>
+        <li><strong>Food and beverage manufacturing:</strong> production scheduling and work order tracking across processing lines</li>
+        <li><strong>Industrial maintenance operations:</strong> predictive and condition-based maintenance enabled by real-time data pipelines</li>
+        <li><strong>Any SME</strong> seeking Industry 4.0 digital transformation with clear bottleneck-identification, energy management, or production tracking use cases</li>
+      </ul>
+      <div class="card__divider"></div>
+    </div>
+
+    <!-- TAGS + CTA -->
+    <div class="card card--tags">
+      <div class="card__label">Tags</div>
+      <div class="card__tags">
+        <span class="card__tag">Industry4.0</span>
+        <span class="card__tag">IoT</span>
+        <span class="card__tag">ShopManagementSoftware</span>
+        <span class="card__tag">CloudComputing</span>
+        <span class="card__tag">AWS</span>
+        <span class="card__tag">Cobot</span>
+        <span class="card__tag">Manufacturing</span>
+        <span class="card__tag">ProductionDashboard</span>
+        <span class="card__tag">WorkOrderTracking</span>
+        <span class="card__tag">EnergyManagement</span>
+        <span class="card__tag">BottleneckAnalysis</span>
+        <span class="card__tag">CarbonEmissions</span>
+        <span class="card__tag">GHGProtocol</span>
+        <span class="card__tag">Scope3</span>
+        <span class="card__tag">LowCarbonReadiness</span>
+        <span class="card__tag">DigitalTransformation</span>
+        <span class="card__tag">MaterialHandling</span>
+      </div>
+      <p class="card__cta-heading">Is your manufacturing facility ready for Industry 4.0?</p>
+      <p class="card__contact">EPIC can help. Contact us at <a href="mailto:epic@mohawkcollege.ca">epic@mohawkcollege.ca</a></p>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <span>Mohawk College — Energy &amp; Power Innovation Centre (EPIC)</span>
+    <span>
+      <a href="mailto:epic@mohawkcollege.ca">epic@mohawkcollege.ca</a>
+      &nbsp;·&nbsp;
+      <a href="../../index.html">← All Projects</a>
+    </span>
+  </footer>
+
+</body>
+</html>
