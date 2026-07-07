@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EPIC — Energy &amp; Power Innovation Centre</title>
+  <link rel="stylesheet" href="assets/epic-theme.css">
+  <style>
+    /* ── Site header ─────────────────────────────────────────── */
+    .site-header {
+      background: var(--epic-charcoal);
+      padding: 1rem 2rem;
+    }
+
+    .site-header__brand {
+      color: var(--epic-white);
+      font-size: 1rem;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .site-header__brand span {
+      color: var(--epic-orange);
+    }
+
+    /* ── Hero ────────────────────────────────────────────────── */
+    .hero {
+      background: var(--epic-accent);
+      color: var(--epic-white);
+      padding: 3rem 2rem;
+    }
+
+    .hero__eyebrow {
+      font-size: 0.75rem;
+      font-weight: bold;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero__title {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    .hero__subtitle {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.85);
+      max-width: 640px;
+      line-height: 1.6;
+    }
+
+    /* ── Page sections ───────────────────────────────────────── */
+    .section {
+      padding: 2.5rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section__heading {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--epic-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--epic-accent);
+    }
+
+    .section--shaded {
+      background: #f7f7f7;
+      max-width: 100%;
+      padding: 2.5rem 0;
+    }
+
+    .section--shaded .section__inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ── Program area cards ──────────────────────────────────── */
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .program-card {
+      background: var(--epic-white);
+      border-top: 4px solid var(--epic-accent);
+      padding: 1.25rem 1.5rem;
+    }
+
+    .program-card--power {
+      border-top-color: var(--epic-accent-soft);
+    }
+
+    .program-card--lcrp {
+      border-top-color: var(--epic-orange);
+    }
+
+    .program-card__name {
+      font-size: 0.95rem;
+      font-weight: bold;
+      color: var(--epic-charcoal);
+      margin-bottom: 0.6rem;
+    }
+
+    .program-card__blurb {
+      font-size: 0.88rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* ── Project index ───────────────────────────────────────── */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .filter-btn {
+      font-size: 0.75rem;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 2px;
+      background: var(--epic-white);
+      cursor: pointer;
+      color: var(--epic-charcoal);
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--epic-accent);
+      border-color: var(--epic-accent);
+      color: var(--epic-white);
+    }
+
+    .project-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .project-table th {
+      text-align: left;
+      padding: 0.6rem 0.75rem;
+      background: var(--epic-charcoal);
+      color: var(--epic-white);
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .project-table td {
+      padding: 0.75rem;
+      border-bottom: 1px solid #e8e8e8;
+      vertical-align: middle;
+    }
+
+    .project-table tr:hover td {
+      background: #fafafa;
+    }
+
+    .project-table .tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.15rem 0.45rem;
+      border-radius: 2px;
+      margin-right: 0.25rem;
+      color: var(--epic-white);
+    }
+
+    .tag--dsi   { background: var(--epic-accent); }
+    .tag--power { background: var(--epic-accent-soft); }
+    .tag--lcrp  { background: var(--epic-orange); color: var(--epic-charcoal); }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .project-links a {
+      font-size: 0.78rem;
+      font-weight: bold;
+      color: var(--epic-accent);
+      text-decoration: none;
+      border: 1px solid var(--epic-accent);
+      padding: 0.2rem 0.55rem;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+
+    .project-links a:hover {
+      background: var(--epic-accent);
+      color: var(--epic-white);
+    }
+
+    .project-links a.ext {
+      color: #666;
+      border-color: #ccc;
+    }
+
+    .project-links a.ext:hover {
+      background: var(--epic-charcoal);
+      border-color: var(--epic-charcoal);
+      color: var(--epic-white);
+    }
+
+    /* ── Tools section ───────────────────────────────────────── */
+    .tools-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: var(--epic-accent);
+      text-decoration: none;
+      border: 2px solid var(--epic-accent);
+      padding: 0.5rem 1.1rem;
+      border-radius: 2px;
+    }
+
+    .tools-link:hover {
+      background: var(--epic-accent);
+      color: var(--epic-white);
+    }
+
+    /* ── Site footer ─────────────────────────────────────────── */
+    .site-footer {
+      background: var(--epic-charcoal);
+      color: rgba(255,255,255,0.6);
+      font-size: 0.8rem;
+      padding: 1.5rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+    }
+
+    .site-footer a {
+      color: var(--epic-orange);
+      text-decoration: none;
+    }
+
+    .site-footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .hero__title { font-size: 1.4rem; }
+      .project-table thead { display: none; }
+      .project-table tr { display: block; padding: 0.75rem 0; border-bottom: 2px solid #e0e0e0; }
+      .project-table td { display: block; padding: 0.25rem 0.75rem; border: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site header -->
+  <header class="site-header">
+    <a class="site-header__brand" href="index.html">
+      Mohawk <span>EPIC</span>
+    </a>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero__eyebrow">Mohawk College — Hamilton, Ontario</div>
+    <h1 class="hero__title">Energy &amp; Power Innovation Centre</h1>
+    <p class="hero__subtitle">
+      EPIC partners with industry to solve applied research challenges in digital systems,
+      power infrastructure, and low carbon readiness. This site is EPIC's technical
+      reference hub — structured evidence from every project, openly published.
+    </p>
+  </section>
+
+  <!-- Program areas -->
+  <div class="section--shaded">
+    <div class="section__inner">
+      <h2 class="section__heading">What We Do</h2>
+      <div class="program-grid">
+
+        <div class="program-card">
+          <div class="program-card__name">Data Systems Integration (DSI)</div>
+          <p class="program-card__blurb">
+            [Placeholder: 2–4 sentence blurb describing this program area. To be provided by user before Module 5.]
+          </p>
+        </div>
+
+        <div class="program-card program-card--power">
+          <div class="program-card__name">Power Systems</div>
+          <p class="program-card__blurb">
+            [Placeholder: 2–4 sentence blurb describing this program area. To be provided by user before Module 5.]
+          </p>
+        </div>
+
+        <div class="program-card program-card--lcrp">
+          <div class="program-card__name">Low Carbon Readiness Program (LCRP)</div>
+          <p class="program-card__blurb">
+            [Placeholder: 2–4 sentence blurb describing this program area. To be provided by user before Module 5.]
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Project index -->
+  <section class="section">
+    <h2 class="section__heading">Projects</h2>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="dsi">DSI</button>
+      <button class="filter-btn" data-filter="power">Power Systems</button>
+      <button class="filter-btn" data-filter="lcrp">LCRP</button>
+    </div>
+
+    <table class="project-table">
+      <thead>
+        <tr>
+          <th>Project</th>
+          <th>Partner</th>
+          <th>Program Area</th>
+          <th>Links</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- Daifuku — real entry, added in M4 -->
+        <tr data-areas="dsi lcrp">
+          <td><strong>Digital Transformation at Daifuku Manufacturing Canada</strong></td>
+          <td>Daifuku Manufacturing Canada Corporation</td>
+          <td>
+            <span class="tag tag--dsi">DSI</span>
+            <span class="tag tag--lcrp">LCRP</span>
+          </td>
+          <td>
+            <div class="project-links">
+              <a href="case-studies/daifuku/index.html">Technical Case Study</a>
+              <a class="ext" href="#" target="_blank" rel="noopener">Mohawk College ↗</a>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Placeholder row 2 -->
+        <tr data-areas="power">
+          <td><strong>[Project Name]</strong></td>
+          <td>[Partner name]</td>
+          <td><span class="tag tag--power">Power Systems</span></td>
+          <td>
+            <div class="project-links">
+              <a href="#">Technical Case Study</a>
+              <a class="ext" href="#" target="_blank" rel="noopener">Mohawk College ↗</a>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Placeholder row 3 -->
+        <tr data-areas="lcrp">
+          <td><strong>[Project Name]</strong></td>
+          <td>[Partner name]</td>
+          <td><span class="tag tag--lcrp">LCRP</span></td>
+          <td>
+            <div class="project-links">
+              <a href="#">Technical Case Study</a>
+              <a class="ext" href="#" target="_blank" rel="noopener">Mohawk College ↗</a>
+              <a href="#">Tool →</a>
+            </div>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Tools overview -->
+  <div class="section--shaded">
+    <div class="section__inner">
+      <h2 class="section__heading">Interactive Tools</h2>
+      <p style="font-size:0.95rem;color:#555;margin-bottom:1.25rem;">
+        EPIC builds interactive calculators and dashboards that industry partners and the public
+        can use to explore data from our research. Browse all available tools below.
+      </p>
+      <a class="tools-link" href="tools/index.html">Browse All Tools →</a>
+    </div>
+  </div>
+
+  <!-- Site footer -->
+  <footer class="site-footer">
+    <span>Mohawk College — Energy &amp; Power Innovation Centre (EPIC)</span>
+    <span>
+      <a href="mailto:epic@mohawkcollege.ca">epic@mohawkcollege.ca</a>
+    </span>
+  </footer>
+
+  <!-- Filter script -->
+  <script>
+    const btns = document.querySelectorAll('.filter-btn');
+    const rows = document.querySelectorAll('.project-table tbody tr');
+
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        rows.forEach(row => {
+          const areas = row.dataset.areas || '';
+          row.style.display = (filter === 'all' || areas.includes(filter)) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

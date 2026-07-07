@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Tools — EPIC</title>
+  <link rel="stylesheet" href="../assets/epic-theme.css">
+  <style>
+    .site-header {
+      background: var(--epic-charcoal);
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .site-header__brand {
+      color: var(--epic-white);
+      font-size: 0.8rem;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .site-header__brand span { color: var(--epic-orange); }
+
+    .site-header__back {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.8rem;
+      text-decoration: none;
+    }
+
+    .site-header__back:hover { color: var(--epic-white); }
+
+    .page-hero {
+      background: var(--epic-accent-soft);
+      color: var(--epic-white);
+      padding: 2rem 2rem 1.75rem;
+    }
+
+    .page-hero__title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 0.4rem;
+    }
+
+    .page-hero__subtitle {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    .tools-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .tool-entry {
+      background: var(--epic-white);
+      border-left: 4px solid var(--epic-orange);
+      padding: 1.1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .tool-entry__info { flex: 1; min-width: 200px; }
+
+    .tool-entry__name {
+      font-size: 1rem;
+      font-weight: bold;
+      color: var(--epic-charcoal);
+      margin-bottom: 0.25rem;
+    }
+
+    .tool-entry__desc {
+      font-size: 0.88rem;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .tool-entry__tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.15rem 0.45rem;
+      border-radius: 2px;
+      color: var(--epic-white);
+      margin-top: 0.4rem;
+    }
+
+    .tag--dsi   { background: var(--epic-accent); }
+    .tag--power { background: var(--epic-accent-soft); }
+    .tag--lcrp  { background: var(--epic-orange); color: var(--epic-charcoal); }
+
+    .tool-entry__link {
+      align-self: center;
+      font-size: 0.82rem;
+      font-weight: bold;
+      color: var(--epic-accent);
+      border: 1px solid var(--epic-accent);
+      padding: 0.3rem 0.75rem;
+      border-radius: 2px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .tool-entry__link:hover {
+      background: var(--epic-accent);
+      color: var(--epic-white);
+    }
+
+    .site-footer {
+      background: var(--epic-charcoal);
+      color: rgba(255,255,255,0.6);
+      font-size: 0.8rem;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+    }
+
+    .site-footer a {
+      color: var(--epic-orange);
+      text-decoration: none;
+    }
+
+    .site-footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="site-header__brand" href="../index.html">Mohawk <span>EPIC</span></a>
+    <a class="site-header__back" href="../index.html">← All Projects</a>
+  </header>
+
+  <div class="page-hero">
+    <h1 class="page-hero__title">Interactive Tools</h1>
+    <p class="page-hero__subtitle">
+      Calculators, dashboards, and utilities built from EPIC research — free to use.
+    </p>
+  </div>
+
+  <main class="section">
+    <div class="tools-list">
+
+      <!-- Placeholder tool entries — replace with real tools as they are built -->
+      <div class="tool-entry">
+        <div class="tool-entry__info">
+          <div class="tool-entry__name">[Tool Name]</div>
+          <p class="tool-entry__desc">
+            [One sentence describing what the tool does and who would use it.]
+          </p>
+          <span class="tool-entry__tag tag--lcrp">LCRP</span>
+        </div>
+        <a class="tool-entry__link" href="[tool-slug]/index.html">Open Tool →</a>
+      </div>
+
+      <div class="tool-entry">
+        <div class="tool-entry__info">
+          <div class="tool-entry__name">[Tool Name]</div>
+          <p class="tool-entry__desc">
+            [One sentence describing what the tool does and who would use it.]
+          </p>
+          <span class="tool-entry__tag tag--dsi">DSI</span>
+        </div>
+        <a class="tool-entry__link" href="[tool-slug]/index.html">Open Tool →</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <span>Mohawk College — Energy &amp; Power Innovation Centre (EPIC)</span>
+    <span>
+      <a href="mailto:epic@mohawkcollege.ca">epic@mohawkcollege.ca</a>
+      &nbsp;·&nbsp;
+      <a href="../index.html">← All Projects</a>
+    </span>
+  </footer>
+
+</body>
+</html>
