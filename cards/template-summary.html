@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Project Title] — Summary</title>
+  <link rel="stylesheet" href="../assets/epic-theme.css">
+  <style>
+    .card__body + .card__body {
+      margin-top: 0.5rem;
+    }
+
+    .card__cta {
+      display: inline-block;
+      margin-top: 1rem;
+      background: var(--epic-accent);
+      color: var(--epic-white);
+      font-size: 0.85rem;
+      font-weight: bold;
+      padding: 0.5rem 1.1rem;
+      text-decoration: none;
+      border-radius: 2px;
+    }
+
+    .card__cta:hover {
+      background: var(--epic-accent-soft);
+    }
+
+    .card__testimonial {
+      margin-top: 1.1rem;
+      padding: 0.75rem 1rem;
+      border-left: 3px solid var(--epic-orange);
+      font-style: italic;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="card__label">Public Summary</div>
+    <p class="card__body">
+      [150–200 word executive summary. Cover: who collaborated, what problem was addressed,
+      what was done, what changed as a result, and why it matters. Accessible tone, minimal
+      jargon. Active voice throughout.]
+    </p>
+    <p class="card__body">
+      [Second paragraph if needed. Include key quantitative result if available.]
+    </p>
+    <!-- Optional testimonial — remove block if not available -->
+    <blockquote class="card__testimonial">
+      "[One-sentence partner testimonial.]" — [Name], [Title], [Organization]
+    </blockquote>
+    <a class="card__cta" href="[full-case-study-url]">Read the full case study →</a>
+    <div class="card__divider"></div>
+  </div>
+</body>
+</html>

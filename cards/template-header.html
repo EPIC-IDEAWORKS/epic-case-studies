@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Project Title] — EPIC Case Study</title>
+  <link rel="stylesheet" href="../assets/epic-theme.css">
+  <style>
+    .card {
+      border-left: none;
+      border-top: 5px solid var(--epic-accent);
+      padding: 1.75rem 1.75rem 1.25rem;
+    }
+
+    .card__meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.5rem;
+      font-size: 0.8rem;
+      color: #666;
+      margin-bottom: 0.75rem;
+    }
+
+    .card__meta span::before {
+      content: '·';
+      margin-right: 0.4rem;
+      color: var(--epic-accent);
+    }
+
+    .card__title {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card__descriptor {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .card__funding {
+      display: inline-block;
+      border: 1px solid var(--epic-accent);
+      color: var(--epic-accent);
+      font-size: 0.72rem;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      border-radius: 2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="card__label">EPIC Case Study</div>
+    <h1 class="card__title">[Project Title]</h1>
+    <p class="card__descriptor">
+      A collaboration between Mohawk College's Energy &amp; Power Innovation Centre (EPIC)
+      and [Partner Name]. [One sentence describing the scope of the project.]
+    </p>
+    <div class="card__meta">
+      <span>[Phase label, e.g. Phases 1 &amp; 2]</span>
+      <span>[Start date] – [End date]</span>
+      <span>[City, Province, Canada]</span>
+    </div>
+    <span class="card__funding">[Funding source, e.g. OCI C2C]</span>
+    <div class="card__divider"></div>
+  </div>
+</body>
+</html>
