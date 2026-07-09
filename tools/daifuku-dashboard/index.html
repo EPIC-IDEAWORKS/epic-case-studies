@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DMCA Smart Dashboard — Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Chart.js for power draw and efficiency charts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Main wrapper -->
+  <div class="main-wrapper">
+    <div id="topbar"></div>
+    <div id="page"></div>
+  </div>
+
+  <!-- Demo controls (floating) -->
+  <div id="demo-controls-root"></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+  <script>
+    // Render demo controls after app boots
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('demo-controls-root').innerHTML =
+        '<button class="demo-controls-toggle" onclick="toggleDemoPanel()">Demo Controls</button>' +
+        '<div class="demo-controls-panel" id="demo-panel">' +
+          '<h3>Demo Controls</h3>' +
+          '<p class="demo-note">Simulated demo of the DMCA Smart Dashboard. Data is randomly generated to show real-time behaviour.</p>' +
+          '<div class="demo-ctrl">' +
+            '<label>Simulation Speed: <span id="speed-label">10s</span></label>' +
+            '<input type="range" min="3000" max="20000" step="1000" value="10000" ' +
+              'oninput="Simulation.setSpeed(parseInt(this.value));document.getElementById(\'speed-label\').textContent=Math.round(this.value/1000)+\'s\'" />' +
+          '</div>' +
+          '<button class="demo-btn" onclick="Simulation.triggerScan(true)">Trigger RFID Scan Now</button>' +
+          '<button class="demo-btn" onclick="Simulation.randomDeviceFlicker()">Flicker Random Device</button>' +
+          '<button class="demo-btn" onclick="Simulation.randomMachineStateChange()">Change Machine State</button>' +
+          '<button class="demo-btn" style="background:#555" onclick="Router.navigate(\'iot\')">View IoT Devices</button>' +
+          '<button class="demo-btn" style="background:#555" onclick="Router.navigate(\'rfid-overview\')">View RFID Overview</button>' +
+        '</div>';
+    });
+  </script>
+</body>
+</html>
