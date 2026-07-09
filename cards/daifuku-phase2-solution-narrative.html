@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daifuku Phase 2 — Building on the Foundation</title>
+  <link rel="stylesheet" href="../assets/epic-theme.css">
+  <style>
+    .card__section {
+      margin-top: 1.1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #ebebeb;
+    }
+
+    .card__screenshot {
+      width: 100%;
+      display: block;
+      border: 1px solid #e0e0e0;
+      margin-top: 1rem;
+    }
+
+    .card__screenshot-caption {
+      font-size: 0.78rem;
+      color: #888;
+      font-style: italic;
+      margin-top: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="card__label">Building on the Foundation</div>
+    <p class="card__body">Phase 1 connected the plant. Phase 2 answered the question: now that we have all this data, what should managers actually see? EPIC worked directly with Daifuku's operations team to identify the metrics that matter — not in a workshop, but through an iterative analytics pipeline that let both sides explore production data together until the right questions emerged.</p>
+    <p class="card__body">The outputs were built into a live reporting page inside the existing platform: a real-time view of where every work order sits across all 20+ cells, job flow in and out of each station, capacity pressure by due date, and anomaly detection that flags cells where jobs have been sitting too long. Alongside that, EPIC delivered Cobot integration improvements, an on-device barcode scanner to automatically log work orders at the point of execution, and a web-based document manager for work order files accessible from anywhere on the plant network.</p>
+
+    <div class="card__section">
+      <h3 class="card__subtitle">Live job distribution across the plant</h3>
+      <p class="card__body">At a glance, managers can see how work is distributed across the facility — which plants are carrying the load and where jobs are concentrating.</p>
+      <img class="card__screenshot"
+           src="../assets/images/daifuku/screenshots/job_allocation_pie_chart.png"
+           alt="Pie chart showing distribution of active jobs across Daifuku production plants" />
+      <p class="card__screenshot-caption">Live job distribution by plant, surfaced in the Phase 2 management reporting dashboard.</p>
+    </div>
+
+    <div class="card__section">
+      <h3 class="card__subtitle">Capacity risk before it becomes a crisis</h3>
+      <p class="card__body">One of the most useful metrics developed in the analytics pipeline is capacity risk: how many jobs share a common due date, and how many days it would take to clear them at current throughput. It gives managers a lead indicator of scheduling pressure, not just a record of what went wrong.</p>
+      <img class="card__screenshot"
+           src="../assets/images/daifuku/screenshots/capacity_risk.png"
+           alt="Chart showing job capacity risk — jobs due vs. days to clear at current throughput" />
+      <p class="card__screenshot-caption">Capacity risk view: jobs with shared due dates vs. estimated days to clear at current throughput.</p>
+    </div>
+
+    <div class="card__section">
+      <h3 class="card__subtitle">Anomaly detection on the plant floor</h3>
+      <p class="card__body">For each production cell, the platform tracks how long jobs typically spend there. Using a modified Z-Score approach, it flags cells where dwell time has become statistically abnormal — an early warning that something has stalled, before it shows up in missed deadlines.</p>
+      <img class="card__screenshot"
+           src="../assets/images/daifuku/screenshots/zscore_anomalies.png"
+           alt="Z-score anomaly detection chart showing cells with abnormal job dwell times" />
+      <p class="card__screenshot-caption">Z-score anomaly detection flags production cells where jobs are staying significantly longer than normal.</p>
+    </div>
+
+    <div class="card__divider"></div>
+  </div>
+</body>
+</html>
