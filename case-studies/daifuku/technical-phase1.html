@@ -251,6 +251,33 @@
       color: rgba(255,255,255,0.8);
     }
 
+    /* ── Tags card ────────────────────────────────────────────── */
+    .card--tags { border-left-color: var(--epic-orange); }
+    .card__tags { margin-bottom: 1.25rem; line-height: 2.2; }
+    .card__tag {
+      display: inline-block;
+      background: #f0f0f0;
+      color: #555;
+      font-size: 0.78rem;
+      padding: 0.2rem 0.5rem;
+      margin: 0.15rem 0.2rem 0.15rem 0;
+      border-radius: 2px;
+    }
+    .card__tag::before { content: "#"; color: var(--epic-accent); }
+    .card__cta-heading { font-size: 0.85rem; font-weight: bold; color: var(--epic-charcoal); margin-bottom: 0.35rem; }
+    .card__contact { font-size: 0.9rem; }
+    .card__contact a { color: var(--epic-accent); font-weight: bold; text-decoration: none; }
+
+    .card__cta {
+      display: inline-block;
+      margin-top: 0.75rem;
+      font-size: 0.85rem;
+      font-weight: bold;
+      color: var(--epic-accent);
+      text-decoration: none;
+    }
+    .card__cta:hover { text-decoration: underline; }
+
     /* ── Site footer ──────────────────────────────────────────── */
     .site-footer {
       background: var(--epic-charcoal);
@@ -497,6 +524,46 @@
         </ul>
       </div>
       <div class="card__divider"></div>
+    </div>
+
+    <!-- SECTORS -->
+    <div class="card">
+      <div class="card__label">Sectors: Who This Model Applies To</div>
+      <p class="card__body">The Phase 1 framework — IoT monitoring, cloud-based analytics, energy and natural gas submetering, RFID work-order tracking, KPI dashboards, and Scope 1, 2, and 3 GHG emissions assessment — is applicable to organizations in:</p>
+      <ul class="card__list">
+        <li><strong>Manufacturing</strong> (automotive, aerospace, electronics, consumer goods): any facility with multi-cell or multi-line production, legacy equipment, or a mandate to quantify and reduce carbon emissions</li>
+        <li><strong>Industrial and process facilities:</strong> operations requiring plant-wide energy monitoring, equipment usage tracking, and targeted peak-shaving strategies</li>
+        <li><strong>Logistics and warehousing:</strong> facilities with material flow, work-order tracking, or regulatory emissions reporting requirements</li>
+        <li><strong>Food and beverage manufacturing:</strong> operations seeking submetering and energy management combined with Scope 3 emissions accounting across the supply chain</li>
+        <li><strong>Any SME</strong> with a corporate GHG reporting mandate, high energy costs, or production inefficiencies that are currently untracked and unquantified</li>
+      </ul>
+      <div class="card__divider"></div>
+    </div>
+
+    <!-- TAGS + CTA -->
+    <div class="card card--tags">
+      <div class="card__label">Tags</div>
+      <div class="card__tags">
+        <span class="card__tag">Industry4.0</span>
+        <span class="card__tag">IoT</span>
+        <span class="card__tag">CloudComputing</span>
+        <span class="card__tag">AWS</span>
+        <span class="card__tag">RFID</span>
+        <span class="card__tag">WorkOrderTracking</span>
+        <span class="card__tag">EnergyManagement</span>
+        <span class="card__tag">Submetering</span>
+        <span class="card__tag">KPIDashboards</span>
+        <span class="card__tag">CarbonEmissions</span>
+        <span class="card__tag">GHGProtocol</span>
+        <span class="card__tag">Scope3</span>
+        <span class="card__tag">LowCarbonReadiness</span>
+        <span class="card__tag">Manufacturing</span>
+        <span class="card__tag">DigitalTransformation</span>
+        <span class="card__tag">MaterialHandling</span>
+        <span class="card__tag">DataAnalytics</span>
+      </div>
+      <p class="card__cta-heading">Is your manufacturing facility ready for Industry 4.0?</p>
+      <p class="card__contact">EPIC can help. Contact us at <a href="mailto:epic@mohawkcollege.ca">epic@mohawkcollege.ca</a></p>
     </div>
 
     <!-- NEXT PHASE -->
