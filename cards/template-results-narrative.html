@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Project Title] — Results Highlights</title>
+  <link rel="stylesheet" href="../assets/epic-theme.css">
+  <style>
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .stat-grid__item {
+      background: #f9f9f9;
+      border-left: 3px solid var(--epic-accent);
+      padding: 0.9rem 1rem;
+    }
+
+    .stat-grid__number {
+      font-size: 1.65rem;
+      font-weight: bold;
+      color: var(--epic-accent);
+      line-height: 1.1;
+    }
+
+    .stat-grid__label {
+      font-size: 0.78rem;
+      color: #555;
+      line-height: 1.4;
+      margin-top: 0.3rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="card__label">Results</div>
+    <!--
+      NARRATIVE ACCURACY RULE: Every stat must be traceable to a specific confirmed
+      result in the technical source document. Do not round, combine, or present
+      pending data as confirmed. If a result is unconfirmed, omit it from this card
+      rather than flagging it — this card shows only highlight outcomes.
+
+      Stat grid: use 3–4 items maximum. Pick the most meaningful confirmed outcomes.
+      Use the same wording as the source — do not reframe numbers to look better.
+      Add a prose paragraph below the grid for context or secondary outcomes.
+    -->
+    <div class="stat-grid">
+      <div class="stat-grid__item">
+        <div class="stat-grid__number">[Value]</div>
+        <div class="stat-grid__label">[Plain-language label — what this number means]</div>
+      </div>
+      <div class="stat-grid__item">
+        <div class="stat-grid__number">[Value]</div>
+        <div class="stat-grid__label">[Plain-language label]</div>
+      </div>
+      <div class="stat-grid__item">
+        <div class="stat-grid__number">[Value]</div>
+        <div class="stat-grid__label">[Plain-language label]</div>
+      </div>
+      <!-- Add a 4th item or remove one as needed — aim for 3–4 -->
+      <div class="stat-grid__item">
+        <div class="stat-grid__number">[Value]</div>
+        <div class="stat-grid__label">[Plain-language label]</div>
+      </div>
+    </div>
+    <!-- Optional: prose paragraph for secondary outcomes or context -->
+    <p class="card__body">
+      [Any confirmed secondary outcomes that don't fit neatly into the stat grid,
+      or context that helps interpret the numbers above. Trace every claim to source.]
+    </p>
+    <div class="card__divider"></div>
+  </div>
+</body>
+</html>

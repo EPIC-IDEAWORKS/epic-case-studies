@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Project Title] — What We Built</title>
+  <link rel="stylesheet" href="../assets/epic-theme.css">
+  <style>
+    .card__section {
+      margin-top: 1.1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #ebebeb;
+    }
+
+    .card__screenshot {
+      width: 100%;
+      display: block;
+      border: 1px solid #e0e0e0;
+      margin-top: 1rem;
+    }
+
+    .card__screenshot-caption {
+      font-size: 0.78rem;
+      color: #888;
+      font-style: italic;
+      margin-top: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="card__label">What We Built</div>
+    <!--
+      NARRATIVE ACCURACY RULE: Every sentence must be traceable to a specific fact
+      in the technical source document. Do not infer, fill gaps, or stretch details
+      to strengthen the story. If anything is unclear or unsourced, stop and ask.
+
+      Use flowing prose paragraphs rather than numbered sections and bullet lists.
+      Add .card__section blocks for major themes if helpful (e.g. one per workstream).
+      Include screenshots where available — use descriptive alt text and a caption.
+    -->
+    <p class="card__body">
+      [1–2 sentence plain-language overview of what was built and why. Trace to source.]
+    </p>
+    <p class="card__body">
+      [Continue the narrative. Each paragraph should cover a distinct workstream or
+      theme. Avoid bullet lists — convert to prose.]
+    </p>
+
+    <!-- Optional: add a .card__section for each major theme with a screenshot -->
+    <div class="card__section">
+      <h3 class="card__subtitle">[Theme or workstream — plain language heading]</h3>
+      <p class="card__body">
+        [Plain-language description of this component. What did it do and why did it matter?]
+      </p>
+      <!-- Remove img block if no screenshot is available for this section -->
+      <img class="card__screenshot"
+           src="../assets/images/[project]/screenshots/[filename].png"
+           alt="[Descriptive alt text]" />
+      <p class="card__screenshot-caption">[One-sentence caption explaining what the image shows.]</p>
+    </div>
+
+    <!-- Add or remove .card__section blocks as needed -->
+
+    <div class="card__divider"></div>
+  </div>
+</body>
+</html>
